@@ -9,7 +9,11 @@ class Chamado extends Model
 {
     use HasFactory;
 
+<<<<<<< HEAD
     protected $table = 'chamados';
+=======
+    protected $table = 'chamado';  
+>>>>>>> de3c28861fdcc502d14fdf5fed5972b8391f603a
     // Campos que podem ser preenchidos em massa
     protected $fillable = [
         'titulo',
