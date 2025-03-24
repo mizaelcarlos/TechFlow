@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ChamadaMidia extends Model
+class ChamadoMidia extends Model
 {
     use HasFactory;
    
