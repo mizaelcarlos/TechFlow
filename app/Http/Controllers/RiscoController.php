@@ -11,12 +11,12 @@ class RiscoController extends Controller
     public function index()
     {
         $riscos = Risco::all(); 
-        return view('riscos.index', compact('riscos'));  
+        return view('risco.index', compact('riscos'));  
     }
 
     public function create()
     {
-        return view('riscos.create'); 
+        return view('risco.create'); 
     }
 
     public function store(Request $request)
@@ -27,19 +27,19 @@ class RiscoController extends Controller
         ]);
 
         Risco::create($request->all());  
-        return redirect()->route('riscos.index')->with('success', 'Risco criado com sucesso!');
+        return redirect()->route('risco.index')->with('success', 'Risco criado com sucesso!');
     }
 
     public function show($id)
     {
         $risco = Risco::findOrFail($id);  
-        return view('riscos.show', compact('risco')); 
+        return view('risco.show', compact('risco')); 
     }
 
     public function edit($id)
     {
         $risco = Risco::findOrFail($id);  
-        return view('riscos.edit', compact('risco')); 
+        return view('risco.edit', compact('risco')); 
     }
 
     public function update(Request $request, $id)
@@ -51,7 +51,7 @@ class RiscoController extends Controller
 
         $risco = Risco::findOrFail($id);  
         $risco->update($request->all());  
-        return redirect()->route('riscos.index')->with('success', 'Risco atualizado com sucesso!');
+        return redirect()->route('risco.index')->with('success', 'Risco atualizado com sucesso!');
     }
 
  
@@ -59,6 +59,6 @@ class RiscoController extends Controller
     {
         $risco = Risco::findOrFail($id);  
         $risco->delete();  
-        return redirect()->route('riscos.index')->with('success', 'Risco excluído com sucesso!');
+        return redirect()->route('risco.index')->with('success', 'Risco excluído com sucesso!');
     }
 }

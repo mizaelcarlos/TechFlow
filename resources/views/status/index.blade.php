@@ -31,6 +31,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Cor</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -39,6 +40,7 @@
                 <tr>
                     <td>{{ $s->id }}</td>
                     <td>{{ $s->nome }}</td>
+                    <td>{{ $s->cor }}</td>
                     <td>
                         <a href="{{ route('status.edit', $s->id) }}" class="btn btn-warning btn-sm">Editar</a>
                         <form action="{{ route('status.destroy', $s->id) }}" method="POST" style="display:inline;">

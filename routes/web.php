@@ -5,12 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChamadoController;
 use App\Http\Controllers\StatusController;
 
-Route::get('/riscos', [RiscoController::class, 'index']);            // Exibir todos os riscos
-Route::get('/riscos/create', [RiscoController::class, 'create']);     // Exibir formulário de criação de risco
-Route::post('/riscos', [RiscoController::class, 'store']);            // Salvar novo risco
-Route::get('/riscos/{id}/edit', [RiscoController::class, 'edit']);    // Exibir formulário de edição de risco
-Route::put('/riscos/{id}', [RiscoController::class, 'update']);       // Atualizar risco
-Route::delete('/riscos/{id}', [RiscoController::class, 'destroy']);   // Excluir risco
+Route::get('risco', [RiscoController::class, 'index'])->name('risco.index');            // Exibir todos os riscos
+Route::get('/risco/create', [RiscoController::class, 'create'])->name('risco.create');     // Exibir formulário de criação de risco
+Route::post('/risco', [RiscoController::class, 'store'])->name('risco.store');            // Salvar novo risco
+Route::get('/risco/{id}/edit', [RiscoController::class, 'edit'])->name('risco.edit');    // Exibir formulário de edição de risco
+Route::put('/risco/{id}', [RiscoController::class, 'update'])->name('risco.update');       // Atualizar risco
+Route::delete('/risco/{id}', [RiscoController::class, 'destroy'])->name('risco.destroy');   //Excluir risco
 
 
 Route::get('chamado', [ChamadoController::class, 'index'])->name('chamado.index');          // Exibe a lista de chamados
