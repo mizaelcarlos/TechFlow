@@ -5,37 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status - Lista</title>
+
+    <title>Listagem de Status</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Status</h1>
-    <a href="{{ route('status.create') }}">Criar Novo Status</a>
-    <br><br>
 
-    <table>
+<div class="container">
+    <h1>Status Listagem</h1>
+
+    <!-- Mensagem de sucesso -->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <!-- Link para criar novo Status -->
+    <a href="{{ route('status.create') }}" class="mb-3 btn btn-primary">Criar Novo Status</a>
+
+    <!-- Tabela com a listagem de Status -->
+    <div class="table-responsive">
+    <table class="table table-striped">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
-                <th>Cor</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($status as $statu)
+            @foreach($status as $s)
                 <tr>
-                    <td>{{ $statu->nome }}</td>
-                    <td style="background-color: {{ $statu->cor }}; color: orange;">{{ $statu->cor }}</td>
+                    <td>{{ $s->id }}</td>
+                    <td>{{ $s->nome }}</td>
                     <td>
-                        <a href="{{ route('status.show', $statu->id) }}">Ver</a>
-                        <a href="{{ route('status.edit', $statu->id) }}">Editar</a>
-                        <form action="{{ route('status.destroy', $statu->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('status.edit', $s->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ route('status.destroy', $s->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Tem certeza de que deseja deletar este Status?')">Deletar</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+</div>
+
 </body>
 </html>

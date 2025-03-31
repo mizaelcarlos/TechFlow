@@ -76,4 +76,4 @@ class StatusController extends Controller
         Status::findOrFail($id)->delete();
         return redirect()->route('status.index');
     }
- }
+}
