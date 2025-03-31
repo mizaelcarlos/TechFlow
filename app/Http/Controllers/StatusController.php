@@ -32,7 +32,7 @@ class StatusController extends Controller
     public function store(Request $request)
     {
         // Cria um novo Status com os dados enviados
-        Status::create($request->only('nome'));  // Assumindo que o campo é 'nome'
+        Status::create($request->all());  // Assumindo que o campo é 'nome'
         return redirect()->route('status.index');
     }
 
