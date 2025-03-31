@@ -24,6 +24,8 @@ Route::delete('chamado/{id}', [ChamadoController::class, 'destroy'])->name('cham
 
 Route::get('status', [StatusController::class, 'index'])->name('status.index');
 Route::get('/status/create', [StatusController::class, 'create'])->name('status.create');
+
 Route::get('status/{id}', [StatusController::class, 'show'])->name('status.show');
 Route::get('status/{id}/edit', [StatusController::class, 'edit'])->name('status.edit');
 Route::delete('status/{id}', [StatusController::class, 'destroy'])->name('status.destroy');
+Route::post('/status/store', [StatusController::class, 'store'])->name('status.store');
