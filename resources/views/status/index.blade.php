@@ -1,5 +1,4 @@
 <!-- resources/views/status/index.blade.php -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
