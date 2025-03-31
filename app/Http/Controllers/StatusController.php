@@ -63,7 +63,7 @@ class StatusController extends Controller
     {
         // Atualiza o Status
         $status = Status::findOrFail($id);
-        $status->update($request->only('nome'));  // Atualiza o campo 'nome'
+        $status->update($request->all());  // Atualiza o campo 'nome'
         return redirect()->route('status.index');
     }
 

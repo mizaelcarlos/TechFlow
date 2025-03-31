@@ -23,8 +23,15 @@
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome do Status</label>
                 <input type="text" class="form-control" id="nome" name="nome"  required>
+
+                
             </div>
-            
+
+            <div class="mb-3">
+                <label for="cor" class="form-label">Cor</label>
+                <input type="color" class="form-control" id="cor" name="cor"  required>
+            </div>
+
             <button type="submit" class="btn btn-success">Salvar Status</button>
             <a href="/status" class="btn btn-secondary">Cancelar</a>
         </form>
