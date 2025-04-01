@@ -4,6 +4,7 @@ use App\Http\Controllers\RiscoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChamadoController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\SetorController;
 
 Route::get('risco', [RiscoController::class, 'index'])->name('risco.index');            // Exibir todos os riscos
 Route::get('/risco/create', [RiscoController::class, 'create'])->name('risco.create');     // Exibir formulário de criação de risco
@@ -24,9 +25,17 @@ Route::delete('chamado/{id}', [ChamadoController::class, 'destroy'])->name('cham
 
 Route::get('status', [StatusController::class, 'index'])->name('status.index');
 Route::get('/status/create', [StatusController::class, 'create'])->name('status.create');
-
 Route::get('status/{id}', [StatusController::class, 'show'])->name('status.show');
 Route::get('status/{id}/edit', [StatusController::class, 'edit'])->name('status.edit');
 Route::delete('status/{id}', [StatusController::class, 'destroy'])->name('status.destroy');
 Route::post('/status/store', [StatusController::class, 'store'])->name('status.store');
-Route::put('status/{id}', [StatusController::class, 'update'])->name('status.update'); 
+Route::put('status/{id}', [StatusController::class, 'update'])->name('status.update');
+
+
+Route::get('setor', [SetorController::class, 'index'])->name('setor.index');
+Route::get('/setor/create', [SetorController::class, 'create'])->name('setor.create');
+Route::get('setor/{id}', [SetorController::class, 'show'])->name('setor.show');
+Route::get('setor/{id}/edit', [SetorController::class, 'edit'])->name('setor.edit');
+Route::delete('setor/{id}', [SetorController::class, 'destroy'])->name('setor.destroy');
+Route::post('/setor/store', [SetorController::class, 'store'])->name('setor.store');
+Route::put('setor/{id}', [SetorController::class, 'update'])->name('setor.update');
