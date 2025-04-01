@@ -40,7 +40,7 @@
                         <td>{{ $risco->id }}</td>
                         <td>{{ $risco->nome }}</td>
                         <td>{{ $risco->cor }}</td>
-                        
+
                         <td>
                             <!-- Botões de ações -->
                             <a href="{{ route('risco.edit', $risco->id) }}" class="btn btn-warning btn-sm">Editar</a>
