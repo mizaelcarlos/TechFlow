@@ -39,7 +39,7 @@
                     <tr>
                         <td>{{ $risco->id }}</td>
                         <td>{{ $risco->nome }}</td>
-                        <td>{{ $risco->cor }}</td>
+                        <td style="background-color: {{ $risco->cor }}; width: 80px; height: 10px; border-radius: 5px;" ></td>
                         
                         <td>
                             <!-- Botões de ações -->
