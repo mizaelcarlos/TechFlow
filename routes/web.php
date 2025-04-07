@@ -29,8 +29,7 @@ Route::get('status/{id}', [StatusController::class, 'show'])->name('status.show'
 Route::get('status/{id}/edit', [StatusController::class, 'edit'])->name('status.edit');
 Route::delete('status/{id}', [StatusController::class, 'destroy'])->name('status.destroy');
 Route::post('/status/store', [StatusController::class, 'store'])->name('status.store');
-Route::put('status/{id}', [StatusController::class, 'update'])->name('status.update');
-
+Route::put('status/{id}', [StatusController::class, 'update'])->name('status.update'); 
 
 Route::get('setor', [SetorController::class, 'index'])->name('setor.index');
 Route::get('/setor/create', [SetorController::class, 'create'])->name('setor.create');
