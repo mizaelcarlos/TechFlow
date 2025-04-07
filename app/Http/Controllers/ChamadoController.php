@@ -13,7 +13,7 @@ class ChamadoController extends Controller
     public function index()
     {
 
-        $chamados = Chamado::all();
+        $chamados = Chamado::with('status')->get();
         return view('chamado.index', compact('chamados'));
     }
 
